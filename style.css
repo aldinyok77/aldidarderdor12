@@ -7,13 +7,25 @@
     scroll-behavior: smooth; /* Memberikan efek scroll halus saat klik menu navigasi */
 }
 
+html{
+cursor: url('labubu.png'), auto;
+}
+
 body {
     background-color: rgb(252, 235, 235); /* Warna latar belakang sangat soft pink */
     color: rgb(93, 64, 55); /* Warna teks utama coklat muda agar lembut */
     line-height: 1.6;
     overflow-x: hidden; /* Mencegah scroll horizontal yang tidak diinginkan */
+    cursor: url('labubu.png'), auto;
 }
 
+/* --- CUSTOM CURSOR LABUBU --- */
+
+/* Membuat kursor berubah saat diarahkan ke tombol atau link */
+a, button, .proyek-card, .medsos-item {
+    /* Kamu bisa menggunakan gambar Labubu yang sama atau yang berbeda (misal: Labubu sedang menunjuk) */
+    cursor: url('labubu.png'), pointer;
+}
 /* Tambahkan sedikit dekorasi untuk keseluruhan body */
 body::before {
     content: '';
