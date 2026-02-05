@@ -272,4 +272,93 @@ nav ul li a:hover {
 }
 
 .proyek-info p {
-    font-size: 0
+    font-size: 0.95rem;
+    color: rgb(140, 93, 83);
+}
+
+/* --- MEDIA SOSIAL --- */
+.medsos {
+    background-color: rgb(255, 249, 237); /* Latar kuning muda untuk medsos */
+}
+
+.medsos h2 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    color: rgb(255, 235, 59); /* Warna kuning cerah */
+    position: relative;
+    display: inline-block;
+}
+
+.medsos h2::after {
+    content: '💞'; /* Dekorasi hati */
+    position: absolute;
+    font-size: 1.2rem;
+    top: -10px;
+    right: -25px;
+}
+
+.medsos-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Agar ikon turun ke bawah jika layar sempit */
+    gap: 40px; /* Jarak antar ikon yang lebih besar */
+    margin-top: 50px;
+}
+
+.medsos-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: rgb(93, 64, 55);
+    font-weight: bold;
+    transition: transform 0.3s ease-in-out;
+}
+
+.medsos-item:hover {
+    transform: translateY(-10px); /* Efek naik saat hover */
+}
+
+.medsos-item img {
+    width: 60px; /* Ukuran ikon yang lebih besar */
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 12px;
+    transition: filter 0.3s;
+    border-radius: 50%; /* Agar ikon bulat */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.medsos-item:hover img {
+    filter: drop-shadow(0 0 15px rgb(255, 173, 205)); /* Efek bayangan pink saat hover */
+}
+
+.medsos-item span {
+    font-size: 1.1rem;
+    color: rgb(140, 93, 83);
+}
+
+
+/* --- FOOTER --- */
+footer {
+    text-align: center;
+    padding: 50px;
+    background-color: rgb(209, 247, 233); /* Warna hijau mint untuk footer */
+    border-top: 2px solid rgb(168, 230, 207);
+    font-size: 1rem;
+    color: rgb(93, 64, 55);
+    font-weight: 500;
+}
+
+footer p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+footer p::before {
+    content: 'Made with ❤️ and Labubu magic'; /* Pesan footer yang imut */
+    font-size: 0.9rem;
+    color: rgb(122, 95, 87);
+}
