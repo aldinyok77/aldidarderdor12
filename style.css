@@ -3,24 +3,41 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box; /* Memastikan padding tidak merusak ukuran elemen */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Font yang ceria dan ramah */
     scroll-behavior: smooth; /* Memberikan efek scroll halus saat klik menu navigasi */
 }
 
 body {
-    background-color: #0b1014; /* Warna latar gelap ala markas Avengers */
-    color: #ffffff; /* Warna teks utama putih agar kontras */
+    background-color: #fcebeb; /* Warna latar belakang sangat soft pink */
+    color: #5d4037; /* Warna teks utama coklat muda agar lembut */
     line-height: 1.6;
+    overflow-x: hidden; /* Mencegah scroll horizontal yang tidak diinginkan */
 }
+
+/* Tambahkan sedikit dekorasi untuk keseluruhan body */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('gambar/labubu-pattern.png'); /* Opsional: Tambahkan pola Labubu kecil sebagai watermark */
+    opacity: 0.1; /* Buat sangat transparan */
+    z-index: -1;
+    pointer-events: none; /* Pastikan tidak mengganggu interaksi */
+}
+
 
 /* --- NAVIGASI --- */
 header {
-    background-color: #1a232e; /* Biru sangat gelap */
-    padding: 20px 0;
+    background-color: #ffe0e6; /* Warna pink pastel untuk header */
+    padding: 15px 0;
     position: sticky; /* Menu tetap di atas saat di-scroll */
     top: 0;
     z-index: 1000;
-    border-bottom: 3px solid #e23636; /* Garis merah khas Iron Man */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Bayangan lembut untuk kesan melayang */
+    border-bottom: 2px solid #ffadcd; /* Garis pink yang sedikit lebih gelap */
 }
 
 nav ul {
@@ -30,19 +47,23 @@ nav ul {
 }
 
 nav ul li {
-    margin: 0 20px;
+    margin: 0 25px;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: #f1f1f1;
+    color: #8c5d53; /* Warna coklat untuk link navigasi */
     font-weight: bold;
     text-transform: uppercase;
-    transition: 0.3s; /* Efek transisi saat hover */
+    transition: 0.3s ease-in-out; /* Efek transisi yang lebih lembut */
+    padding: 5px 10px;
+    border-radius: 20px;
 }
 
 nav ul li a:hover {
-    color: #ffcc00; /* Warna emas saat disentuh kursor */
+    color: #fff; /* Warna putih saat disentuh kursor */
+    background-color: #ffadcd; /* Latar pink yang imut saat hover */
+    transform: scale(1.1); /* Efek membesar sedikit */
 }
 
 /* --- HERO SECTION --- */
@@ -50,103 +71,238 @@ nav ul li a:hover {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    padding: 100px 10%;
-    background: linear-gradient(rgba(11, 16, 20, 0.8), rgba(11, 16, 20, 0.8)), 
-                url('gambar/background-tech.jpg'); /* Opsional: beri background pola teknologi */
+    padding: 120px 10%;
+    background: linear-gradient(135deg, #fff7f7 0%, #ffeaf0 100%); /* Gradient lembut */
+    min-height: 80vh; /* Memastikan hero section cukup tinggi */
+    position: relative;
+    overflow: hidden; /* Untuk efek dekorasi */
+}
+
+/* Dekorasi tambahan untuk hero section */
+.hero::before {
+    content: '💖✨🐻'; /* Emoji imut */
+    position: absolute;
+    font-size: 5rem;
+    color: rgba(255, 255, 255, 0.3);
+    top: 20px;
+    left: 20px;
+    animation: floatEffect 5s ease-in-out infinite alternate; /* Animasi melayang */
+}
+
+.hero::after {
+    content: '🌟☁️🧸'; /* Emoji imut lainnya */
+    position: absolute;
+    font-size: 5rem;
+    color: rgba(255, 255, 255, 0.3);
+    bottom: 20px;
+    right: 20px;
+    animation: floatEffect 5s ease-in-out infinite alternate-reverse; /* Animasi melayang kebalikannya */
+}
+
+@keyframes floatEffect {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-15px); }
+}
+
+.hero-content {
+    text-align: center; /* Teks di tengah */
+    max-width: 600px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: #8c5d53;
+    margin-bottom: 15px;
 }
 
 .hero-content h1 {
-    font-size: 4rem;
-    color: #e23636;
-    text-transform: uppercase;
+    font-size: 4.5rem;
+    color: #ffadcd; /* Warna pink khas Labubu */
+    text-transform: capitalize;
     letter-spacing: 2px;
+    text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.05); /* Bayangan lembut */
+    margin-bottom: 20px;
 }
 
 .hero-logo img {
-    width: 300px;
+    width: 350px;
+    height: 350px; /* Buat proporsi sama */
+    object-fit: cover; /* Pastikan gambar tidak pecah */
     border-radius: 50%; /* Membuat foto profil bulat */
-    border: 5px solid #ffcc00; /* Bingkai emas */
-    box-shadow: 0 0 20px rgba(255, 204, 0, 0.5); /* Efek cahaya (glow) */
+    border: 8px solid #a8e6cf; /* Bingkai mint yang imut */
+    box-shadow: 0 0 30px rgba(168, 230, 207, 0.6); /* Efek cahaya (glow) yang lembut */
+    animation: pulse 2s infinite alternate; /* Animasi berdenyut */
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.03); }
 }
 
 .btn-hero {
     display: inline-block;
-    margin-top: 20px;
-    padding: 12px 30px;
-    background-color: #e23636;
+    margin-top: 30px;
+    padding: 15px 35px;
+    background-color: #ffadcd; /* Pink Labubu untuk tombol */
     color: white;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 30px; /* Tombol jadi lebih bulat */
     font-weight: bold;
-    transition: transform 0.3s;
+    font-size: 1.1rem;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 8px 15px rgba(255, 173, 205, 0.4);
 }
 
 .btn-hero:hover {
-    transform: scale(1.1); /* Efek membesar sedikit saat hover */
-    background-color: #b31d1d;
+    transform: translateY(-5px) scale(1.05); /* Efek membesar dan naik sedikit saat hover */
+    background-color: #ff8fab; /* Pink yang sedikit lebih gelap saat hover */
+    box-shadow: 0 12px 20px rgba(255, 143, 171, 0.6);
 }
 
 /* --- ABOUT SECTION --- */
 .container {
-    padding: 80px 10%;
+    padding: 100px 10%;
     text-align: center;
 }
 
 .about {
-    background-color: #161d26;
+    background-color: #f7f0f0; /* Warna putih keabu-abuan yang sangat lembut */
+    border-radius: 20px; /* Sudut melengkung untuk section */
+    margin: 50px auto;
+    max-width: 1200px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 .about h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #ffcc00;
+    font-size: 3rem;
+    margin-bottom: 30px;
+    color: #ffadcd; /* Warna pink Labubu */
+    position: relative;
+    display: inline-block;
+}
+
+.about h2::after {
+    content: '⭐'; /* Dekorasi bintang */
+    position: absolute;
+    font-size: 1.2rem;
+    top: -10px;
+    right: -25px;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: #7a5f57;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* --- PROYEK GRID --- */
+.proyek {
+    background-color: #e6f7ff; /* Latar biru muda untuk proyek */
+    padding-bottom: 100px; /* Tambahan padding bawah */
+}
+
+.proyek h2 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    color: #9cdcf6; /* Warna biru muda yang cerah */
+    position: relative;
+    display: inline-block;
+}
+
+.proyek h2::after {
+    content: '🎨'; /* Dekorasi palet */
+    position: absolute;
+    font-size: 1.2rem;
+    top: -10px;
+    right: -25px;
+}
+
 .proyek-grid {
     display: grid; /* Mengaktifkan mode Grid */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Membuat kartu otomatis sejajar dan responsif */
-    gap: 25px; /* Jarak antar kartu */
-    margin-top: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Membuat kartu otomatis sejajar dan responsif */
+    gap: 30px; /* Jarak antar kartu */
+    margin-top: 50px;
 }
 
 .proyek-card {
-    background-color: #1f2937;
-    border-radius: 10px;
+    background-color: #fff; /* Latar putih untuk kartu proyek */
+    border-radius: 15px; /* Sudut melengkung yang lebih imut */
     overflow: hidden; /* Agar gambar tidak keluar dari sudut melengkung kartu */
     text-decoration: none;
-    color: white;
-    transition: 0.4s;
-    border: 1px solid #333;
+    color: #5d4037;
+    transition: all 0.4s ease-in-out;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* Bayangan yang lebih menonjol */
+    position: relative;
+    padding-bottom: 20px; /* Ruang untuk info di bawah */
 }
 
 .proyek-card:hover {
-    transform: translateY(-10px); /* Kartu naik sedikit saat di-hover */
-    border-color: #e23636;
+    transform: translateY(-15px) scale(1.03); /* Kartu naik dan sedikit membesar saat di-hover */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.proyek-card::before {
+    content: '🧸'; /* Ikon Labubu kecil di sudut kartu */
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    opacity: 0.7;
 }
 
 .proyek-card img {
     width: 100%;
-    height: 200px;
+    height: 220px;
     object-fit: cover; /* Gambar dipotong rapi memenuhi area */
+    border-bottom: 3px solid #f9d5e3; /* Garis pemisah imut */
 }
 
 .proyek-info {
-    padding: 20px;
+    padding: 25px 20px;
+    text-align: left;
 }
 
 .proyek-info h3 {
-    color: #ffcc00;
-    margin-bottom: 10px;
+    color: #ffadcd; /* Pink Labubu untuk judul proyek */
+    margin-bottom: 8px;
+    font-size: 1.5rem;
+}
+
+.proyek-info p {
+    font-size: 0.95rem;
+    color: #8c5d53;
 }
 
 /* --- MEDIA SOSIAL --- */
+.medsos {
+    background-color: #fff9ed; /* Latar kuning muda untuk medsos */
+}
+
+.medsos h2 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    color: #ffeb3b; /* Warna kuning cerah */
+    position: relative;
+    display: inline-block;
+}
+
+.medsos h2::after {
+    content: '💞'; /* Dekorasi hati */
+    position: absolute;
+    font-size: 1.2rem;
+    top: -10px;
+    right: -25px;
+}
+
 .medsos-list {
     display: flex;
     justify-content: center;
     flex-wrap: wrap; /* Agar ikon turun ke bawah jika layar sempit */
-    gap: 30px;
-    margin-top: 30px;
+    gap: 40px; /* Jarak antar ikon yang lebih besar */
+    margin-top: 50px;
 }
 
 .medsos-item {
@@ -154,25 +310,55 @@ nav ul li a:hover {
     flex-direction: column;
     align-items: center;
     text-decoration: none;
-    color: white;
+    color: #5d4037;
+    font-weight: bold;
+    transition: transform 0.3s ease-in-out;
+}
+
+.medsos-item:hover {
+    transform: translateY(-10px); /* Efek naik saat hover */
 }
 
 .medsos-item img {
-    width: 50px;
-    margin-bottom: 10px;
-    transition: 0.3s;
+    width: 60px; /* Ukuran ikon yang lebih besar */
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 12px;
+    transition: filter 0.3s;
+    border-radius: 50%; /* Agar ikon bulat */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .medsos-item:hover img {
-    filter: brightness(1.2) drop-shadow(0 0 10px #e23636); /* Efek menyala pada ikon */
+    filter: drop-shadow(0 0 15px #ffadcd); /* Efek bayangan pink saat hover */
 }
+
+.medsos-item span {
+    font-size: 1.1rem;
+    color: #8c5d53;
+}
+
 
 /* --- FOOTER --- */
 footer {
     text-align: center;
-    padding: 40px;
-    background-color: #0b1014;
-    border-top: 1px solid #333;
+    padding: 50px;
+    background-color: #d1f7e9; /* Warna hijau mint untuk footer */
+    border-top: 2px solid #a8e6cf;
+    font-size: 1rem;
+    color: #5d4037;
+    font-weight: 500;
+}
+
+footer p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+footer p::before {
+    content: 'Made with ❤️ and Labubu magic'; /* Pesan footer yang imut */
     font-size: 0.9rem;
-    color: #888;
+    color: #7a5f57;
 }
