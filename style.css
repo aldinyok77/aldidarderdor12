@@ -277,32 +277,25 @@ nav ul li a:hover {
 }
 
 /* --- MEDIA SOSIAL --- */
+/* --- MEDIA SOSIAL (PROPORSI BARU) --- */
 .medsos {
-    background-color: rgb(255, 249, 237); /* Latar kuning muda untuk medsos */
+    background-color: rgb(255, 249, 237); /* Latar kuning muda tetap */
 }
 
 .medsos h2 {
-    font-size: 3rem;
-    margin-bottom: 30px;
-    color: rgb(255, 235, 59); /* Warna kuning cerah */
+    font-size: 2.5rem; /* Ukuran judul sedikit dikecilkan agar seimbang */
+    margin-bottom: 20px;
+    color: rgb(255, 235, 59); 
     position: relative;
     display: inline-block;
-}
-
-.medsos h2::after {
-    content: '💞'; /* Dekorasi hati */
-    position: absolute;
-    font-size: 1.2rem;
-    top: -10px;
-    right: -25px;
 }
 
 .medsos-list {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap; /* Agar ikon turun ke bawah jika layar sempit */
-    gap: 40px; /* Jarak antar ikon yang lebih besar */
-    margin-top: 50px;
+    flex-wrap: wrap; 
+    gap: 30px; /* Jarak antar item dipersempit sedikit */
+    margin-top: 30px;
 }
 
 .medsos-item {
@@ -313,31 +306,34 @@ nav ul li a:hover {
     color: rgb(93, 64, 55);
     font-weight: bold;
     transition: transform 0.3s ease-in-out;
+    width: 100px; /* Memberi lebar tetap agar jarak teks dan ikon rapi */
 }
 
 .medsos-item:hover {
-    transform: translateY(-10px); /* Efek naik saat hover */
+    transform: translateY(-8px); /* Efek naik dikurangi sedikit supaya halus */
 }
 
 .medsos-item img {
-    width: 60px; /* Ukuran ikon yang lebih besar */
-    height: 60px;
+    width: 45px; /* UKURAN DIPERBAIKI: Dari 60px ke 45px agar lebih elegan */
+    height: 45px;
     object-fit: contain;
-    margin-bottom: 12px;
+    margin-bottom: 8px; /* Jarak ikon ke tulisan diperkecil */
     transition: filter 0.3s;
-    border-radius: 50%; /* Agar ikon bulat */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 50%; 
+    background-color: rgb(255, 255, 255); /* Memberi latar putih pada ikon agar bersih */
+    padding: 8px; /* Memberi ruang di dalam lingkaran ikon */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Bayangan lebih tipis */
 }
 
 .medsos-item:hover img {
-    filter: drop-shadow(0 0 15px rgb(255, 173, 205)); /* Efek bayangan pink saat hover */
+    filter: drop-shadow(0 0 10px rgb(255, 173, 205)); 
 }
 
 .medsos-item span {
-    font-size: 1.1rem;
+    font-size: 0.9rem; /* Ukuran teks nama medsos dikecilkan sedikit */
     color: rgb(140, 93, 83);
+    letter-spacing: 0.5px;
 }
-
 
 /* --- FOOTER --- */
 footer {
@@ -362,3 +358,4 @@ footer p::before {
     font-size: 0.9rem;
     color: rgb(122, 95, 87);
 }
+
